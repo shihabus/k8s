@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+# name for the Pod
+  name: nodehelloworld.example.com
+  labels:
+  # label for selecting this Pod
+    app: helloworld
+spec:
+  containers:
+  # user defined name for container 
+  - name: k8s-demo
+  # conatiner image repository details
+    image: wardviaene/k8s-demo
+    ports:
+    # name given to the containerPort
+    - name: nodejs-port     
+    # containerPort number                   
+      containerPort: 3000
