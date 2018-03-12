@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: redisapp-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redisapp
+    spec:
+      containers:
+      - name: redisapp
+        image: vemanamar/redisapp
+        ports:
+        - name: redisapp-port
+          containerPort: 8181

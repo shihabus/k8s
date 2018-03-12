@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  ports:
+    #the port defined in manifest
+  - port: 8080
+    # specify a port as NodePort
+    nodePort: 31002      
+    #the name of port defined in manifest                    
+    targetPort: webapp-port
+    protocol: TCP
+  selector:
+    app: webapp
+  type: NodePort
